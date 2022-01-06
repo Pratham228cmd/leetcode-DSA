@@ -6,9 +6,9 @@ public:
     int dy[4]={-1,1,0,0};
     ll dp[51][51][51];
     int helper(int r,int c,int move,int m,int n){
-        // if(move<=-1)return 0;
+        if(move<=-1)return 0;
         if(r<0 || c<0 || r>=m || c>=n)return 1;
-        if(move<=0)return 0;
+        // if(move<=0)return 0;
         if(dp[r][c][move]!=-1)return dp[r][c][move];
         ll ans=0;
         for(int i=0;i<4;i++){
