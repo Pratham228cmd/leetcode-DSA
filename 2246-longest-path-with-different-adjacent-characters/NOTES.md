@@ -1,0 +1,1 @@
+https://leetcode.com/problems/longest-path-with-different-adjacent-characters/discuss/1955791/C%2B%2B-DFS-on-Tree
