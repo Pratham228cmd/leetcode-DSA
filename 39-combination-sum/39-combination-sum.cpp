@@ -17,7 +17,7 @@ public:
         int n=arr.size();
         vector<int>temp;
         // sort(arr.begin(),arr.end());
-        arr.erase(unique(arr.begin(),arr.end()),arr.end());
+        // arr.erase(unique(arr.begin(),arr.end()),arr.end());
         helper(arr,target,0,temp,n);
         return res;
     }
