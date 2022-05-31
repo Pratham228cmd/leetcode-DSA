@@ -21,7 +21,7 @@ public:
          int n=nums.size();
         int l=*max_element(nums.begin(),nums.end());
         int r=accumulate(nums.begin(),nums.end(),0);
-        sort(nums.begin(),nums.end());
+        // sort(nums.begin(),nums.end());
         int ans=-1;
         while(r>=l){
             int mid=(l+r)/2;
