@@ -5,9 +5,9 @@ public:
     int solve(int i,int back,int a,int b,int x){
         
         if(i==x)return 0;
-        // if(mp.find(i)!=mp.end() || i>x || i<0)return 1e9;
-        if( i < 0 || mp.find(i)!= mp.end() || i>6000 )
-            return 1e9;
+        if(i<0 ||mp.find(i)!=mp.end() || i>6000)return 1e9;
+        // if( i < 0 || mp.find(i)!= mp.end() || i>6000 )
+        //     return 1e9;
         
         if(dp[i][back]!=-1)return dp[i][back];
         // int temp=0;
