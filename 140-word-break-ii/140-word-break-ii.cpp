@@ -1,29 +1,28 @@
 class Solution {
 public:
-    vector<string>res;
-    void helper(string s,int ind,string temp,unordered_set<string> st){
-        if(ind==s.size()){
-            temp.pop_back();
-            
-            res.push_back(temp);
-            return;
-        }
-        string str="";
-        for(int i=ind;i<s.size();i++){
-            str+=s[i];
-            if(st.count(str)){
-                helper(s,i+1,temp+str+" ",st);
-            }
-        }
+    vector<string> sentences;
+vector<string> wordBreak(string s, vector<string>& wordDict)
+{
+    unordered_set<string> setting;
+    setting.insert(wordDict.begin(), wordDict.end());
+    dfs(s, "", setting);
+    return sentences;
+}
+
+void dfs(string s, string sentence, unordered_set<string>& setting)
+{
+    if(s.empty())
+    {
+        sentence.pop_back();
+        sentences.push_back(sentence);
+        return;
     }
-    vector<string> wordBreak(string s, vector<string>& wordDict) {
-         unordered_set<string> set;
-        // vector<string> res;
-        for(auto word:wordDict)
-            set.insert(word);
-        //to store the current string 
-        string curr="";
-        helper(s,0,curr,set);
-        return res;
+    int n = s.size();
+    for(int i = 1; i <= n; i++)
+    {
+        if(!setting.count(s.substr(0, i)))
+            continue;
+        dfs(s.substr(i), sentence + s.substr(0, i) + " ", setting);
     }
+}
 };
